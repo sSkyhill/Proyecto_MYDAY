@@ -1,0 +1,8 @@
+PRUEBAS REALIZADAS:
+
+Inicio Sesión
+-Campos vacíos
+-Nombre demasiado largo
+
+Registro
+-Campos vacíos

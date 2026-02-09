@@ -9,11 +9,33 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myday.AdaptadorFeed;
+import com.example.myday.DatosPerfiles;
+import com.example.myday.R;
 import com.example.myday.databinding.FragmentHomeBinding;
 
-public class HomeFragment extends Fragment {
+import java.util.ArrayList;
 
+public class HomeFragment extends Fragment {
+    RecyclerView rv;
+    AdaptadorFeed adaptadorFeed;
+    ArrayList<DatosPerfiles> datosPerfiles;
+    RecyclerView.LayoutManager miLayoutManager;
+    public void rellenaDatos(){
+        datosPerfiles = new ArrayList<DatosPerfiles>();
+
+        datosPerfiles.add(new DatosPerfiles("@travisscott", R.drawable.travisperfil,R.drawable.travis));
+        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
+        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
+        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
+        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
+        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
+        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
+
+    }
     private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -26,7 +48,14 @@ public class HomeFragment extends Fragment {
 
 //        final TextView textView = binding.textHome;
 //        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        rellenaDatos();
+        adaptadorFeed = new AdaptadorFeed(datosPerfiles);
+        rv = binding.recyclerView;
 
+        rv.setAdapter(adaptadorFeed);
+        miLayoutManager = new LinearLayoutManager(requireContext(),
+                LinearLayoutManager.VERTICAL, false);
+        rv.setLayoutManager(miLayoutManager);
         return root;
     }
 

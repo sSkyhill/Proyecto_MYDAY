@@ -22,9 +22,7 @@
     }
 
     .paginaMyday {
-      width: 360px;
-      max-width: 95vw;
-      min-height: 640px;
+      
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 20px;
@@ -34,13 +32,17 @@
       flex-direction: column;
     }
 
-    /* LOGIN SCREEN */
+    
     .login {
+        width: 360px;
+      max-width: 95vw;
+      min-height: 640px;
       padding: 40px 28px;
       display: flex;
       flex-direction: column;
       gap: 20px;
       flex: 1;
+      
     }
 
     .logo {
@@ -108,12 +110,48 @@
 
     
     .pagina_main {
+        width: 100%;
       display: none; 
       flex: 1;
-      background: #000;
+      background: #606060;
       color: #fff;
       position: relative;
+      
+
     }
+
+  .barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 64px;
+    border-top: 1px solid #e0e0e0;
+    background: #ffffff;
+  }
+
+  .btnBarra {
+    border: none;
+    background: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: #777;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btnBarra.primary {
+    color: #6aa8ff; /* color principal */
+    font-weight: 700;
+  }
+
+  .btnBarra:hover {
+    background: rgba(0, 0, 0, 0.03);
+  }
 
     
 

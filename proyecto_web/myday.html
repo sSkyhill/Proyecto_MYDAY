@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="myday.css">
-  <title>MY.DAY</title>
-  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="myday.css">
+    <title>MY.DAY</title>
+
 </head>
+
 <body>
-  <div class="paginaMyday">
+    <div class="paginaMyday">
 
-    
-    <section class="login" id="login">
-      <div class="logo"><span class="my">MY.</span><span class="day">DAY</span></div>
 
-      <div class="campos">
-        <label for="usuario">Nombre de usuario</label>
-        <input id="usuario" type="text" placeholder="" />
-      </div>
+        <section class="login" id="login">
+            <div class="logo"><span class="my">MY.</span><span class="day">DAY</span></div>
 
-      <div class="campos">
-        <label for="contrasena">Contraseña</label>
-        <input id="contrasena" type="password" placeholder="" />
-      </div>
+            <div class="campos">
+                <label for="usuario">Nombre de usuario</label>
+                <input id="usuario" type="text" placeholder="" />
+            </div>
 
-      <button class="btnInicio" onclick="enterApp()">
-        💬 EMPEZAR EL DÍA
-      </button>
+            <div class="campos">
+                <label for="contrasena">Contraseña</label>
+                <input id="contrasena" type="password" placeholder="" />
+            </div>
 
-      <div class="textoRegistro">
-        ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
-      </div>
-    </section>
+            <button class="btnInicio" onclick="enterApp()">
+                💬 EMPEZAR EL DÍA
+            </button>
 
-   
-    <section class="pagina_main" id="pagina_main">
-      
-        
+            <div class="textoRegistro">
+                ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
+            </div>
+        </section>
 
-      
-    </section>
-  </div>
 
-  <script>
-    function enterApp() {
-      document.getElementById('login').style.display = 'none';
-      document.getElementById('dashboard').style.display = 'flex';
-      document.querySelector('.app-frame').style.background = '#000';
-    }
-  </script>
+        <section class="pagina_main" id="pagina_main">
+            <nav class="barra">
+                <button class="btnBarra" id="inicio">Inicio</button>
+                <button class="btnBarra" id="subir">Subir foto</button>
+                <button class="btnBarra" id="perfil">Perfil</button>
+            </nav>
+
+
+
+        </section>
+    </div>
+
+    <script>
+        function enterApp() {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('pagina_main').style.display = 'flex';
+
+        }
+    </script>
 </body>
+
 </html>

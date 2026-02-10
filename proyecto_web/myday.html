@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="myday.css">
+  <title>MY.DAY</title>
+  
+</head>
+<body>
+  <div class="paginaMyday">
+
+    
+    <section class="login" id="login">
+      <div class="logo"><span class="my">MY.</span><span class="day">DAY</span></div>
+
+      <div class="campos">
+        <label for="usuario">Nombre de usuario</label>
+        <input id="usuario" type="text" placeholder="" />
+      </div>
+
+      <div class="campos">
+        <label for="contrasena">Contraseña</label>
+        <input id="contrasena" type="password" placeholder="" />
+      </div>
+
+      <button class="btnInicio" onclick="enterApp()">
+        💬 EMPEZAR EL DÍA
+      </button>
+
+      <div class="textoRegistro">
+        ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
+      </div>
+    </section>
+
+   
+    <section class="pagina_main" id="pagina_main">
+      
+        
+
+      
+    </section>
+  </div>
+
+  <script>
+    function enterApp() {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'flex';
+      document.querySelector('.app-frame').style.background = '#000';
+    }
+  </script>
+</body>
+</html>

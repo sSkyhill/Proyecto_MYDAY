@@ -46,8 +46,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-//        final TextView textView = binding.textHome;
-//        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
         rellenaDatos();
         adaptadorFeed = new AdaptadorFeed(datosPerfiles);
         rv = binding.recyclerView;

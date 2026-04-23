@@ -1,5 +1,7 @@
 package com.example.myday;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +14,9 @@ import java.util.List;
 
 public class AdaptadorPerfil extends RecyclerView.Adapter<AdaptadorPerfil.PhotoViewHolder> {
 
-    ArrayList<DatosPerfiles> datosPerfiles = new ArrayList<>();
-    public AdaptadorPerfil(ArrayList<DatosPerfiles> datosPerfiles){
-        this.datosPerfiles = datosPerfiles;
+    List<Usuario> usuarios = new ArrayList<>();
+        public AdaptadorPerfil(List<Usuario> usuarios){
+        this.usuarios = usuarios;
     }
 
 
@@ -36,13 +38,17 @@ public class AdaptadorPerfil extends RecyclerView.Adapter<AdaptadorPerfil.PhotoV
 
     @Override
     public void onBindViewHolder(PhotoViewHolder holder, int position) {
-        DatosPerfiles dp = this.datosPerfiles.get(position);
-        holder.getfotoSubida().setImageResource(dp.getFotoMuro());
+        Usuario usu = this.usuarios.get(position);
+        String foto = usu.getFotoperfil();
+
+        byte[] decoded = android.util.Base64.decode(foto, android.util.Base64.DEFAULT);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
+        holder.getfotoSubida().setImageBitmap(bitmap);
     }
 
     @Override
     public int getItemCount() {
-        return datosPerfiles.size();
+        return usuarios.size();
     }
 
     public static class PhotoViewHolder extends RecyclerView.ViewHolder {

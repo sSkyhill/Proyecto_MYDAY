@@ -1,5 +1,7 @@
 package com.example.myday;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +12,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdaptadorFeed extends RecyclerView.Adapter<AdaptadorFeed.MyViewHolder>{
-    ArrayList<DatosPerfiles> datosPerfiles;
-    public AdaptadorFeed(ArrayList<DatosPerfiles> datosPerfiles){
-        this.datosPerfiles = datosPerfiles;
+//    ArrayList<DatosPerfiles> datosPerfiles;
+    List<Usuario> usuarios;
+    public AdaptadorFeed(List<Usuario> usuarios){
+        this.usuarios = usuarios;
     }
     @NonNull
     @Override
@@ -22,16 +26,20 @@ public class AdaptadorFeed extends RecyclerView.Adapter<AdaptadorFeed.MyViewHold
         View elemento= LayoutInflater.from(parent.getContext()).inflate(R.layout.celda,
                 parent, false);
         MyViewHolder mvh = new MyViewHolder(elemento);
-        return mvh ;
+        return mvh;
         // return new MyViewHolder(elemento);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        DatosPerfiles dp=this.datosPerfiles.get(position);
-        holder.getNombre().setText(dp.getNombreUsuario());
-        holder.getFotoPerfil().setImageResource(dp.getFotoPerfil());
-        holder.getfotoSubida().setImageResource(dp.getFotoMuro());
+        Usuario usu=this.usuarios.get(position);
+        String foto = usu.getFotoperfil();
+
+        byte[] decoded = android.util.Base64.decode(foto, android.util.Base64.DEFAULT);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
+        holder.getNombre().setText(usu.getNombreUsuario());
+        holder.getFotoPerfil().setImageBitmap(bitmap);
+        holder.getfotoSubida().setImageBitmap(bitmap);
 
 
 //        if (selectedPos == position)
@@ -41,7 +49,7 @@ public class AdaptadorFeed extends RecyclerView.Adapter<AdaptadorFeed.MyViewHold
 
     @Override
     public int getItemCount() {
-        return this.datosPerfiles.size();
+        return this.usuarios.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

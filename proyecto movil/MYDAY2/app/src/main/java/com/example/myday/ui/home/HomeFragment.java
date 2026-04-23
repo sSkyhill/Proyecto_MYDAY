@@ -13,29 +13,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myday.AdaptadorFeed;
+import com.example.myday.ApiRest;
 import com.example.myday.DatosPerfiles;
 import com.example.myday.R;
+import com.example.myday.Usuario;
 import com.example.myday.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
     RecyclerView rv;
     AdaptadorFeed adaptadorFeed;
-    ArrayList<DatosPerfiles> datosPerfiles;
+    List<Usuario> usuarios;
     RecyclerView.LayoutManager miLayoutManager;
-    public void rellenaDatos(){
-        datosPerfiles = new ArrayList<DatosPerfiles>();
 
-        datosPerfiles.add(new DatosPerfiles("@travisscott", R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
-
-    }
     private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -45,10 +37,11 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        usuarios = new ArrayList<Usuario>();
+        ApiRest ap = new ApiRest();
+        usuarios = ap.obtenerUsuarios();
 
-
-        rellenaDatos();
-        adaptadorFeed = new AdaptadorFeed(datosPerfiles);
+        adaptadorFeed = new AdaptadorFeed(usuarios);
         rv = binding.recyclerView;
 
         rv.setAdapter(adaptadorFeed);

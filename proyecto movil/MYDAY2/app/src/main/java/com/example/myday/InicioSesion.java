@@ -55,7 +55,7 @@ public class InicioSesion extends AppCompatActivity {
 
 
                 boolean flag = true;
-                if(editNombre.getText().isEmpty()){
+                if(editNombre.getText().equals("")){
                     editNombre.setHint("Introduce un nombre de usuario");
                     editNombre.setHintTextColor(Color.RED);
                     flag = false;
@@ -65,7 +65,7 @@ public class InicioSesion extends AppCompatActivity {
                     flag = true;
                 }
 
-                if(editContrasena.getText().isEmpty()){
+                if(editContrasena.getText().equals("")){
                     editContrasena.setHint("Introduce una contraseña");
                     editContrasena.setHintTextColor(Color.RED);
                     flag = false;

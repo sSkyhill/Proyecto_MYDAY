@@ -13,11 +13,15 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myday.AdaptadorPerfil;
+import com.example.myday.ApiRest;
 import com.example.myday.DatosPerfiles;
 import com.example.myday.R;
+import com.example.myday.Usuario;
 import com.example.myday.databinding.FragmentPerfilBinding;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import androidx.camera.core.Camera;
 import androidx.camera.core.CameraSelector;
 import androidx.camera.core.Preview;
@@ -28,19 +32,10 @@ public class PerfilFragment extends Fragment {
 
     private FragmentPerfilBinding binding;
     AdaptadorPerfil adaptadorPerfil;
-    ArrayList<DatosPerfiles> datosPerfiles;
-    public void rellenaDatos(){
-        datosPerfiles = new ArrayList<DatosPerfiles>();
 
-        datosPerfiles.add(new DatosPerfiles("@travisscott", R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
-        datosPerfiles.add(new DatosPerfiles("@travisscott",R.drawable.travisperfil,R.drawable.travis));
 
-    }
+    List<Usuario> usuarios;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -48,9 +43,11 @@ public class PerfilFragment extends Fragment {
                 new ViewModelProvider(this).get(PerfilViewModel.class);
         binding = FragmentPerfilBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        rellenaDatos();
+        usuarios = new ArrayList<Usuario>();
+        ApiRest apr = new ApiRest();
+        usuarios = apr.obtenerUsuarios();
         RecyclerView rv = binding.recyclerView2;
-        adaptadorPerfil = new AdaptadorPerfil(datosPerfiles);
+        adaptadorPerfil = new AdaptadorPerfil(usuarios);
         int screenWidth = getResources().getDisplayMetrics().widthPixels;
         int imageSize = screenWidth / 3;
         ViewGroup.LayoutParams params = rv.getLayoutParams();

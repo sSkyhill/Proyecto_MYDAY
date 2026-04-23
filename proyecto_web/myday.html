@@ -38,11 +38,26 @@
 
         <section class="pagina_main" id="pagina_main">
             <nav class="barra">
-                <button class="btnBarra" id="inicio">Inicio</button>
-                <button class="btnBarra" id="subir">Subir foto</button>
-                <button class="btnBarra" id="perfil">Perfil</button>
+                <button class="btnBarra" onclick="cambiarSeccion('inicio')">Inicio</button>
+                <button class="btnBarra" onclick="cambiarSeccion('subirFoto')">Subir foto</button>
+                <button class="btnBarra" onclick="cambiarSeccion('perfil')">Perfil</button>
             </nav>
 
+            <div class="contenidoNav" id="inicio">
+                <h2>Feed de Publicaciones</h2>
+                <p>Aquí aparecerán las publicaciones...</p>
+            </div>
+            <div class="contenidoNav" id="subirFoto">
+                <h2>Subir Foto</h2>
+                <textarea placeholder="Escribe algo..." style="resize: none;" maxlength="255"></textarea><br>
+                <input type="file" accept="image/*"><br>
+                <button>Publicar</button>
+            </div>
+            <div class="contenidoNav" id="perfil">
+                <h2>Mi Perfil</h2>
+                <p id="nombreUsuario">Usuario</p>
+                <p>Email: usuario@myday.com</p>
+            </div>
 
 
         </section>
@@ -53,6 +68,12 @@
             document.getElementById('login').style.display = 'none';
             document.getElementById('pagina_main').style.display = 'flex';
 
+        }
+        function cambiarSeccion(seccion) {
+            document.getElementById('inicio').style.display = 'none';
+            document.getElementById('subirFoto').style.display = 'none';
+            document.getElementById('perfil').style.display = 'none';
+            document.getElementById(seccion).style.display = 'block';
         }
     </script>
 </body>

@@ -9,7 +9,7 @@
     }
 
     * { box-sizing: border-box; }
-
+ 
     body {
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -20,6 +20,11 @@
       align-items: center;
       min-height: 100vh;
     }
+     .contenidoNav {
+            display: none;
+            
+            
+        }
 
     .paginaMyday {
       
@@ -111,6 +116,7 @@
     
     .pagina_main {
         width: 100%;
+        height: 100%;
       display: none; 
       flex: 1;
       background: #606060;
@@ -152,6 +158,7 @@
   .btnBarra:hover {
     background: rgba(0, 0, 0, 0.03);
   }
+
 
     
 

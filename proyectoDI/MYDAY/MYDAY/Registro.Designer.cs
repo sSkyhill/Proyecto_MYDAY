@@ -91,6 +91,7 @@
             btnRegistro.TabIndex = 4;
             btnRegistro.Text = "Registrarse";
             btnRegistro.UseVisualStyleBackColor = false;
+            btnRegistro.Click += btnRegistro_Click;
             // 
             // Registro
             // 

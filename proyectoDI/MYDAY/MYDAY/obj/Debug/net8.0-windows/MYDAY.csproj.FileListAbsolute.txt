@@ -17,3 +17,4 @@ C:\Users\skyyh\Documents\Coding\2DAM\PROYECTO\proyectoDI\MYDAY\MYDAY\obj\Debug\n
 C:\Users\skyyh\Documents\Coding\2DAM\PROYECTO\proyectoDI\MYDAY\MYDAY\obj\Debug\net8.0-windows\MYDAY.genruntimeconfig.cache
 C:\Users\skyyh\Documents\Coding\2DAM\PROYECTO\proyectoDI\MYDAY\MYDAY\obj\Debug\net8.0-windows\ref\MYDAY.dll
 C:\Users\skyyh\Documents\Coding\2DAM\PROYECTO\proyectoDI\MYDAY\MYDAY\obj\Debug\net8.0-windows\MYDAY.Registro.resources
+C:\Users\skyyh\Documents\Coding\2DAM\PROYECTO\proyectoDI\MYDAY\MYDAY\obj\Debug\net8.0-windows\MYDAY.Feed.resources

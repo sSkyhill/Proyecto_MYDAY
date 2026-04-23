@@ -27,8 +27,9 @@ namespace MYDAY
         private void lblRegistro_Click(object sender, EventArgs e)
         {
             Registro registro = new Registro();
-            registro.Show();
             this.Hide();
+            registro.ShowDialog();
+            this.Show();
 
         }
         private void BorrarTextoPlaceholder(object sender, EventArgs e)

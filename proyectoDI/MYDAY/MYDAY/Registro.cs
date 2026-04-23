@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -36,7 +37,8 @@ namespace MYDAY
         private void borrarTextoPlaceholder(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            if (textBox != null && (textBox.Text == "Nombre de usuario" || textBox.Text == "Contraseña" || textBox.Text == "E-Mail"))
+            textBox.ForeColor = Color.White;
+            if (textBox != null)
             {
                 textBox.Text = "";
                 textBox.ForeColor = Color.White;
@@ -50,6 +52,58 @@ namespace MYDAY
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private bool validarDatos()
+        {
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            {
+                txtUsuario.ForeColor = Color.Red;
+                txtUsuario.Text = "Nombre de usuario no válido";
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtContrasena.Text))
+            {
+
+                txtContrasena.ForeColor = Color.Red;
+                txtContrasena.Text = "Contraseña no válida";
+                txtContrasena.UseSystemPasswordChar = false;
+                return false;
+            }
+            if (txtContrasena.Text.Length < 4)
+            {
+
+                txtContrasena.ForeColor = Color.Red;
+                txtContrasena.Text = "Debe tener 4 caracteres al menos";
+                txtContrasena.UseSystemPasswordChar = false;
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtMail.Text) || !Regex.IsMatch(txtMail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                txtMail.ForeColor = Color.Red;
+                txtMail.Text = "Email no válido";
+                return false;
+            }
+            return true;
+        }
+
+        private async void btnRegistro_Click(object sender, EventArgs e)
+        {
+            if (!validarDatos())
+            {
+                return;
+            }
+            Usuario usuario = new Usuario(txtUsuario.Text, txtContrasena.Text, txtMail.Text, "");
+            ServicioUsuario servicioUsuario = new ServicioUsuario();
+            bool ok = await servicioUsuario.RegistrarUsuario(usuario);
+            if (ok)
+            {
+                MessageBox.Show("Registro exitoso");
+                this.Close();
+            }
+            else
+            {
+                
+            }
         }
     }
 }

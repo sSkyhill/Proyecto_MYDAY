@@ -1,3 +1,6 @@
+using Microsoft.VisualBasic.Logging;
+using System.Windows.Forms.Design;
+
 namespace MYDAY
 {
     public partial class InicioSesion : Form
@@ -46,16 +49,37 @@ namespace MYDAY
             }
         }
 
-        private void btnInicio_Click(object sender, EventArgs e)
+        private async void btnInicio_Click(object sender, EventArgs e)
         {
-            if(txtUsuario.Text == "admin" && txtContrasena.Text == "admin")
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
             {
-                MessageBox.Show("Inicio de sesión exitoso");
+                MessageBox.Show("Introduce el usuario");
+                return;
+            }
 
+            if (string.IsNullOrWhiteSpace(txtContrasena.Text))
+            {
+                MessageBox.Show("Introduce la contraseña");
+                return;
+            }
+
+            UsuarioLogin login = new UsuarioLogin
+                (txtUsuario.Text,
+                txtContrasena.Text);
+
+        
+
+            ServicioUsuario servicioUsuario = new ServicioUsuario();
+
+            string resultado = await servicioUsuario.IniciarSesion(login);
+
+            if (resultado == "OK")
+            {
+                MessageBox.Show("Login correcto");
             }
             else
             {
-                MessageBox.Show("Nombre de usuario o contraseña incorrectos");
+                MessageBox.Show("Login incorrecto");
             }
         }
     }

@@ -15,7 +15,7 @@
     <init-param>
       <param-name>jersey.config.server.provider.packages</param-name>
       <!-- Paquete donde están tus clases Java (UsuarioResource, etc.) -->
-      <param-value>ejem1</param-value>
+      <param-value>api</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>

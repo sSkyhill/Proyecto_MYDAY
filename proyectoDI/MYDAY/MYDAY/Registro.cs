@@ -16,11 +16,13 @@ namespace MYDAY
         public Registro()
         {
             InitializeComponent();
-
+            
         }
         private void Registro_Load(object sender, EventArgs e)
         {
             CambiarTamano();
+            this.AcceptButton = btnRegistro;
+
         }
         private void CambiarTamano()
         {

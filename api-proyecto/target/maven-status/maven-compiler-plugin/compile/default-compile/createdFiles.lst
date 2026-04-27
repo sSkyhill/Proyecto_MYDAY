@@ -1,7 +1,7 @@
-ejem1\Perfil.class
-ejem1\Imagen.class
-ejem1\ConexionBD.class
-ejem1\PerfilResource.class
-ejem1\ImagenResource.class
-ejem1\Usuario.class
-ejem1\UsuarioResource.class
+api\Imagen.class
+api\Usuario.class
+api\ImagenResource.class
+api\PublicacionResource.class
+api\Publicacion.class
+api\ConexionBD.class
+api\UsuarioResource.class

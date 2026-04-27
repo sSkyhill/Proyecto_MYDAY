@@ -3,36 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\iniciosesion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\iniciosesion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\serviciousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\serviciousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\feed.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\feed.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\feed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\feed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\usuariologin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\usuariologin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\feed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\feed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\perfil.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\perfil.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\panelpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\panelpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\panelpost.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\panelpost.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\panelpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\panelpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\formsubirpubli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\formsubirpubli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\myday\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\registro.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\registro.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\myday\\feed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\feed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\iniciosesion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\iniciosesion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,6 +87,133 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Perfil.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Perfil.Designer.cs",
+              "RelativeDocumentMoniker": "MYDAY\\Perfil.Designer.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Perfil.Designer.cs",
+              "RelativeToolTip": "MYDAY\\Perfil.Designer.cs",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAAABoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T13:25:07.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Feed.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Feed.Designer.cs",
+              "RelativeDocumentMoniker": "MYDAY\\Feed.Designer.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Feed.Designer.cs*",
+              "RelativeToolTip": "MYDAY\\Feed.Designer.cs*",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAuwF8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T08:46:04.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Perfil.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Perfil.cs",
+              "RelativeDocumentMoniker": "MYDAY\\Perfil.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Perfil.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MYDAY\\Perfil.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T13:24:32.441Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Perfil.cs",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Perfil.cs",
+              "RelativeDocumentMoniker": "MYDAY\\Perfil.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Perfil.cs",
+              "RelativeToolTip": "MYDAY\\Perfil.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAADwv2wAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T13:31:18.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Feed.cs",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Feed.cs",
+              "RelativeDocumentMoniker": "MYDAY\\Feed.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Feed.cs",
+              "RelativeToolTip": "MYDAY\\Feed.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAtwJUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T10:08:03.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Feed.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Feed.cs",
+              "RelativeDocumentMoniker": "MYDAY\\Feed.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Feed.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MYDAY\\Feed.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T10:18:31.363Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PanelPost.cs",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\PanelPost.cs",
+              "RelativeDocumentMoniker": "MYDAY\\PanelPost.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\PanelPost.cs",
+              "RelativeToolTip": "MYDAY\\PanelPost.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAswE0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T09:37:29.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PanelPost.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\PanelPost.Designer.cs",
+              "RelativeDocumentMoniker": "MYDAY\\PanelPost.Designer.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\PanelPost.Designer.cs",
+              "RelativeToolTip": "MYDAY\\PanelPost.Designer.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAuwFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T10:27:40.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Publicacion.cs",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Publicacion.cs",
+              "RelativeDocumentMoniker": "MYDAY\\Publicacion.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Publicacion.cs",
+              "RelativeToolTip": "MYDAY\\Publicacion.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAD4vwsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T08:22:03.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PanelPost.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\PanelPost.cs",
+              "RelativeDocumentMoniker": "MYDAY\\PanelPost.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\PanelPost.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MYDAY\\PanelPost.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T07:21:08.737Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "InicioSesion.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\InicioSesion.cs",
               "RelativeDocumentMoniker": "MYDAY\\InicioSesion.cs",
@@ -66,72 +225,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ServicioUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\ServicioUsuario.cs",
-              "RelativeDocumentMoniker": "MYDAY\\ServicioUsuario.cs",
-              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\ServicioUsuario.cs*",
-              "RelativeToolTip": "MYDAY\\ServicioUsuario.cs*",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwDkAAABUAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "FormSubirPubli.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\FormSubirPubli.cs",
+              "RelativeDocumentMoniker": "MYDAY\\FormSubirPubli.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\FormSubirPubli.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MYDAY\\FormSubirPubli.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T10:44:19.671Z",
+              "WhenOpened": "2026-04-27T08:49:30.53Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Registro.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Registro.Designer.cs",
+              "RelativeDocumentMoniker": "MYDAY\\Registro.Designer.cs",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Registro.Designer.cs",
+              "RelativeToolTip": "MYDAY\\Registro.Designer.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwFkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T10:32:42.153Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 13,
               "Title": "InicioSesion.Designer.cs",
               "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\InicioSesion.Designer.cs",
               "RelativeDocumentMoniker": "MYDAY\\InicioSesion.Designer.cs",
               "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\InicioSesion.Designer.cs",
               "RelativeToolTip": "MYDAY\\InicioSesion.Designer.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAtwDAAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA8wCwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T10:13:47.38Z",
+              "WhenOpened": "2026-04-24T10:30:17.077Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 14,
               "Title": "Registro.cs",
               "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Registro.cs",
               "RelativeDocumentMoniker": "MYDAY\\Registro.cs",
               "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Registro.cs",
               "RelativeToolTip": "MYDAY\\Registro.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAAwGgAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T09:39:42.547Z",
+              "WhenOpened": "2026-04-24T10:34:04.848Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InicioSesion.cs",
-              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\InicioSesion.cs",
-              "RelativeDocumentMoniker": "MYDAY\\InicioSesion.cs",
-              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\InicioSesion.cs",
-              "RelativeToolTip": "MYDAY\\InicioSesion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T08:25:52.16Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UsuarioLogin.cs",
-              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\UsuarioLogin.cs",
-              "RelativeDocumentMoniker": "MYDAY\\UsuarioLogin.cs",
-              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\UsuarioLogin.cs",
-              "RelativeToolTip": "MYDAY\\UsuarioLogin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T07:31:03.661Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "Registro.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Registro.cs",
               "RelativeDocumentMoniker": "MYDAY\\Registro.cs",
@@ -142,18 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Feed.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Feed.cs",
-              "RelativeDocumentMoniker": "MYDAY\\Feed.cs",
-              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Feed.cs [Dise\u00F1o]",
-              "RelativeToolTip": "MYDAY\\Feed.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T10:16:35.673Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Usuario.cs",
               "RelativeDocumentMoniker": "MYDAY\\Usuario.cs",

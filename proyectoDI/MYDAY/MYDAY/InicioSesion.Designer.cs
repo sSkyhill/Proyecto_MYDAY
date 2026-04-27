@@ -44,9 +44,10 @@
             txtUsuario.Location = new Point(216, 189);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(182, 27);
-            txtUsuario.TabIndex = 0;
+            txtUsuario.TabIndex = 1;
             txtUsuario.Text = "Nombre de usuario";
             txtUsuario.Click += BorrarTextoPlaceholder;
+            txtUsuario.Enter += BorrarTextoPlaceholder;
             // 
             // txtContrasena
             // 
@@ -56,9 +57,10 @@
             txtContrasena.MaxLength = 250;
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Size = new Size(182, 27);
-            txtContrasena.TabIndex = 0;
+            txtContrasena.TabIndex = 2;
             txtContrasena.Text = "Contraseña";
             txtContrasena.Click += BorrarTextoPlaceholder;
+            txtContrasena.Enter += BorrarTextoPlaceholder;
             // 
             // btnInicio
             // 
@@ -69,7 +71,7 @@
             btnInicio.Location = new Point(249, 304);
             btnInicio.Name = "btnInicio";
             btnInicio.Size = new Size(108, 40);
-            btnInicio.TabIndex = 1;
+            btnInicio.TabIndex = 3;
             btnInicio.Text = "Iniciar Sesión";
             btnInicio.UseVisualStyleBackColor = false;
             btnInicio.Click += btnInicio_Click;
@@ -83,7 +85,7 @@
             pctLogo.Location = new Point(225, 50);
             pctLogo.Name = "pctLogo";
             pctLogo.Size = new Size(173, 133);
-            pctLogo.TabIndex = 2;
+            pctLogo.TabIndex = 0;
             pctLogo.TabStop = false;
             // 
             // lblRegistro
@@ -105,7 +107,7 @@
             lblCuenta.Location = new Point(164, 359);
             lblCuenta.Name = "lblCuenta";
             lblCuenta.Size = new Size(134, 20);
-            lblCuenta.TabIndex = 3;
+            lblCuenta.TabIndex = 0;
             lblCuenta.Text = "¿No tienes cuenta?";
             // 
             // InicioSesion

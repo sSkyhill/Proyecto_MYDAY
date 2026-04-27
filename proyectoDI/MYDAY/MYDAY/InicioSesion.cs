@@ -13,6 +13,8 @@ namespace MYDAY
         private void InicioSesion_Load(object sender, EventArgs e)
         {
             CambiarTamanos();
+            this.AcceptButton = btnInicio;
+            this.ActiveControl = pctLogo;
         }
         private void CambiarTamanos()
         {
@@ -40,6 +42,7 @@ namespace MYDAY
             TextBox textBox = sender as TextBox;
             if (textBox != null && (textBox.Text == "Nombre de usuario" || textBox.Text == "Contraseña"))
             {
+                
                 textBox.Text = "";
                 textBox.ForeColor = Color.White;
                 if (textBox == txtContrasena)
@@ -76,6 +79,11 @@ namespace MYDAY
             if (resultado == "OK")
             {
                 MessageBox.Show("Login correcto");
+                SesionUsuario.NombreUsuario = txtUsuario.Text;
+                Feed feed = new Feed();
+                this.Hide();
+                feed.ShowDialog();
+                this.Show();
             }
             else
             {

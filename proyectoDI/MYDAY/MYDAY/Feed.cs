@@ -19,6 +19,7 @@ namespace MYDAY
             InitializeComponent();
 
             panelPublicacion.Width = (int)(panelFlow.ClientSize.Width * 0.95);
+            this.MinimumSize = new Size(600, 400);
             this.Resize += Feed_Resize;
             this.Load += Feed_Load;
 
@@ -147,14 +148,17 @@ namespace MYDAY
             }
         }
 
-        private void picPerfil_Click(object sender, EventArgs e)
+        private async void picPerfil_Click(object sender, EventArgs e)
         {
             Perfil perfil = new Perfil();
+            this.Hide();
             if (perfil.ShowDialog() == DialogResult.OK)
             {
                 
-                CargarFeed();
+                await CargarFeed();
+                this.Show();
             }
+            else {                 this.Show(); }
         }
     }
 }

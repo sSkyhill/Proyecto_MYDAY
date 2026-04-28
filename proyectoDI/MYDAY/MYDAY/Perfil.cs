@@ -17,18 +17,17 @@ namespace MYDAY
         public Perfil()
         {
             InitializeComponent();
+            this.Load += Perfil_Load;
         }
         private async void Perfil_Load(object sender, EventArgs e)
         {
+            
+            this.MinimumSize = new Size(500, 400);
             Grids();
             await CargarPublicacionesPerfil();
+            this.Width = 500;
         }
-        private async void Perfil_Resize(
-            object sender,
-            EventArgs e)
-        {
-            await CargarPublicacionesPerfil();
-        }
+        
         private void Grids()
         {
             flowPerfil.WrapContents = true;
@@ -39,8 +38,8 @@ namespace MYDAY
         {
             flowPerfil.Controls.Clear();
 
-            int columnas = 3;
-            int margen = 10;
+            int columnas = 4;
+            int margen = 5;
 
             int anchoCelda =
                 (flowPerfil.ClientSize.Width -
@@ -92,7 +91,7 @@ namespace MYDAY
                 string json = await cliente.GetStringAsync(
                 "http://localhost:8080/api-proyecto-1.0-SNAPSHOT/rest/publicaciones"
                 );
-
+                MessageBox.Show(json);
                 var opciones = new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
@@ -109,10 +108,25 @@ namespace MYDAY
                     .ToList();
 
                 PintarGrid(misPosts);
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private async void picSubir_Click(object sender, EventArgs e)
+        {
+            FormSubirPubli formSubirPubli = new FormSubirPubli();
+            if (formSubirPubli.ShowDialog() == DialogResult.OK)
+            {
+                await CargarPublicacionesPerfil();
             }
         }
     }

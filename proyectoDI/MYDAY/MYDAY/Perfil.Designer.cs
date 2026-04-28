@@ -65,6 +65,7 @@
             picPerfil.Name = "picPerfil";
             picPerfil.Size = new Size(34, 30);
             picPerfil.TabIndex = 6;
+            picPerfil.Click += Perfil_Load;
             // 
             // picSubir
             // 
@@ -77,6 +78,7 @@
             picSubir.SizeMode = PictureBoxSizeMode.Zoom;
             picSubir.TabIndex = 4;
             picSubir.TabStop = false;
+            picSubir.Click += picSubir_Click;
             // 
             // lblPerfil
             // 
@@ -88,6 +90,7 @@
             lblPerfil.Size = new Size(42, 20);
             lblPerfil.TabIndex = 3;
             lblPerfil.Text = "Perfil";
+            lblPerfil.Click += Perfil_Load;
             // 
             // lblImagen
             // 
@@ -99,6 +102,7 @@
             lblImagen.Size = new Size(97, 20);
             lblImagen.TabIndex = 2;
             lblImagen.Text = "Subir Imagen";
+            lblImagen.Click += picSubir_Click;
             // 
             // pictureBox1
             // 
@@ -110,6 +114,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // btnPerfil
             // 

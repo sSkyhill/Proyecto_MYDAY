@@ -49,7 +49,7 @@ namespace MYDAY
                 int nuevoAncho = maxAncho;
                 int nuevoAlto = (int)(nuevoAncho / proporcion);
 
-                
+
                 if (nuevoAlto > maxAlto)
                 {
                     nuevoAlto = maxAlto;
@@ -74,11 +74,11 @@ namespace MYDAY
 
 
             this.Height = picPost.Height + lblComentario.Height + 30;
-            
-            
+
+
 
         }
-        
+
         public void CargarImagen(string nombreUsuario, string comentario, string fechaImagen, Image imagen)
         {
             try

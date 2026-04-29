@@ -21,7 +21,7 @@ namespace MYDAY
             var json = JsonSerializer.Serialize(user);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await _http.PostAsync("http://localhost:8080/api-proyecto-1.0-SNAPSHOT/rest/usuarios", content);
+            var response = await _http.PostAsync("http://localhost:8080/api-proyecto/rest/usuarios", content);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -55,7 +55,7 @@ namespace MYDAY
             );
 
             var response = await _http.PostAsync(
-                "http://localhost:8080/api-proyecto-1.0-SNAPSHOT/rest/usuarios/login",
+                "http://localhost:8080/api-proyecto/rest/usuarios/login",
                 content
             );
 

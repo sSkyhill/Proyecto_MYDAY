@@ -33,6 +33,7 @@
             txtContrasena = new TextBox();
             txtMail = new TextBox();
             btnRegistro = new Button();
+            txtContrasena2 = new TextBox();
             SuspendLayout();
             // 
             // lblRegistro
@@ -69,15 +70,16 @@
             txtContrasena.TabIndex = 2;
             txtContrasena.Text = "Contraseña";
             txtContrasena.Click += borrarTextoPlaceholder;
+            txtContrasena.Enter += borrarTextoPlaceholder;
             // 
             // txtMail
             // 
             txtMail.BackColor = SystemColors.WindowFrame;
             txtMail.ForeColor = SystemColors.Window;
-            txtMail.Location = new Point(233, 227);
+            txtMail.Location = new Point(233, 275);
             txtMail.Name = "txtMail";
             txtMail.Size = new Size(158, 27);
-            txtMail.TabIndex = 3;
+            txtMail.TabIndex = 4;
             txtMail.Text = "E-Mail";
             txtMail.Click += borrarTextoPlaceholder;
             txtMail.TextChanged += textBox3_TextChanged;
@@ -85,13 +87,25 @@
             // btnRegistro
             // 
             btnRegistro.BackColor = Color.PowderBlue;
-            btnRegistro.Location = new Point(260, 288);
+            btnRegistro.Location = new Point(260, 321);
             btnRegistro.Name = "btnRegistro";
             btnRegistro.Size = new Size(94, 29);
-            btnRegistro.TabIndex = 4;
+            btnRegistro.TabIndex = 5;
             btnRegistro.Text = "Registrarse";
             btnRegistro.UseVisualStyleBackColor = false;
             btnRegistro.Click += btnRegistro_Click;
+            // 
+            // txtContrasena2
+            // 
+            txtContrasena2.BackColor = SystemColors.WindowFrame;
+            txtContrasena2.ForeColor = SystemColors.Window;
+            txtContrasena2.Location = new Point(233, 227);
+            txtContrasena2.Name = "txtContrasena2";
+            txtContrasena2.Size = new Size(158, 27);
+            txtContrasena2.TabIndex = 3;
+            txtContrasena2.Text = "Confirmar contraseña";
+            txtContrasena2.Click += borrarTextoPlaceholder;
+            txtContrasena2.Enter += borrarTextoPlaceholder;
             // 
             // Registro
             // 
@@ -99,6 +113,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(649, 450);
+            Controls.Add(txtContrasena2);
             Controls.Add(btnRegistro);
             Controls.Add(txtMail);
             Controls.Add(txtContrasena);
@@ -120,5 +135,6 @@
         private TextBox txtContrasena;
         private TextBox txtMail;
         private Button btnRegistro;
+        private TextBox txtContrasena2;
     }
 }

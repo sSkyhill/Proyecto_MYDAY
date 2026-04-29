@@ -28,15 +28,35 @@ namespace MYDAY
             {
                 byte[] bytes = File.ReadAllBytes(ofd.FileName);
                 imagenBase64 = Convert.ToBase64String(bytes);
-
                 picImagen.Image = Image.FromFile(ofd.FileName);
             }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ninguna imagen");
+            }
+
         }
 
         private async void btnSubir_Click(object sender, EventArgs e)
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(txtComentario.Text) || txtComentario.Text.Contains("Comentario"))
+                {
+                    MessageBox.Show("Por favor, ingresa un comentario");
+                    return;
+                }
+                if (string.IsNullOrEmpty(imagenBase64))
+                {
+                    MessageBox.Show("Por favor, selecciona una imagen");
+                    return;
+                }
+                if (txtComentario.Text.Length > 100)
+                {
+                    MessageBox.Show("El comentario no puede exceder los 100 caracteres");
+                    return;
+                }
+
                 var publicacion = new Publicacion
                 {
                     nombreUsuario = SesionUsuario.NombreUsuario,
@@ -53,7 +73,7 @@ namespace MYDAY
 
                 HttpResponseMessage response =
                     await client.PostAsync(
-                        "http://localhost:8080/api-proyecto-1.0-SNAPSHOT/rest/publicaciones",
+                        "http://localhost:8080/api-proyecto/rest/publicaciones",
                         content
                     );
 

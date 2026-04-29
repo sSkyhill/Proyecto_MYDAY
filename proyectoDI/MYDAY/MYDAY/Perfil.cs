@@ -21,13 +21,13 @@ namespace MYDAY
         }
         private async void Perfil_Load(object sender, EventArgs e)
         {
-            
+
             this.MinimumSize = new Size(500, 400);
             Grids();
             await CargarPublicacionesPerfil();
             this.Width = 500;
         }
-        
+
         private void Grids()
         {
             flowPerfil.WrapContents = true;
@@ -89,7 +89,7 @@ namespace MYDAY
                 using HttpClient cliente = new HttpClient();
 
                 string json = await cliente.GetStringAsync(
-                "http://localhost:8080/api-proyecto-1.0-SNAPSHOT/rest/publicaciones"
+                "http://localhost:8080/api-proyecto/rest/publicaciones"
                 );
                 MessageBox.Show(json);
                 var opciones = new JsonSerializerOptions
@@ -108,7 +108,7 @@ namespace MYDAY
                     .ToList();
 
                 PintarGrid(misPosts);
-                
+
             }
             catch (Exception ex)
             {

@@ -37,8 +37,11 @@
             // 
             // picImagen
             // 
+            picImagen.BackColor = Color.Gray;
+            picImagen.BackgroundImage = (Image)resources.GetObject("picImagen.BackgroundImage");
             picImagen.Cursor = Cursors.Hand;
             picImagen.Image = (Image)resources.GetObject("picImagen.Image");
+            picImagen.InitialImage = null;
             picImagen.Location = new Point(90, 39);
             picImagen.Name = "picImagen";
             picImagen.Size = new Size(334, 225);
@@ -71,6 +74,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
+            BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(503, 374);
             Controls.Add(btnSubir);
             Controls.Add(txtComentario);

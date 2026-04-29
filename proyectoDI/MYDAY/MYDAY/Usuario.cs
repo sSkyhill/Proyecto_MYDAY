@@ -11,13 +11,13 @@ namespace MYDAY
         public string nombreUsuario { get; set; }
         public string contrasena { get; set; }
         public string email { get; set; }
-        public string fotoPerfil { get; set; }
-        public Usuario(string nombreUsuario, string contrasena, string email, string fotoPerfil)
+        
+        public Usuario(string nombreUsuario, string contrasena, string email)
         {
             this.nombreUsuario = nombreUsuario;
             this.contrasena = contrasena;
             this.email = email;
-            this.fotoPerfil = fotoPerfil;
+            
         }
     }
 }

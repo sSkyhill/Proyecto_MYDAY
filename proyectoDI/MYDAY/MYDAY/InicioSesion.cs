@@ -42,7 +42,7 @@ namespace MYDAY
             TextBox textBox = sender as TextBox;
             if (textBox != null && (textBox.Text == "Nombre de usuario" || textBox.Text == "Contraseña"))
             {
-                
+
                 textBox.Text = "";
                 textBox.ForeColor = Color.White;
                 if (textBox == txtContrasena)
@@ -70,7 +70,7 @@ namespace MYDAY
                 (txtUsuario.Text,
                 txtContrasena.Text);
 
-        
+
 
             ServicioUsuario servicioUsuario = new ServicioUsuario();
 

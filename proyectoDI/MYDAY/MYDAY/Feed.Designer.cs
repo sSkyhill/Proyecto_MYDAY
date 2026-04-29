@@ -62,7 +62,9 @@
             // picPerfil
             // 
             picPerfil.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            picPerfil.BackColor = Color.White;
             picPerfil.BackgroundImage = (Image)resources.GetObject("picPerfil.BackgroundImage");
+            picPerfil.BackgroundImageLayout = ImageLayout.Center;
             picPerfil.Cursor = Cursors.Hand;
             picPerfil.Location = new Point(698, 28);
             picPerfil.Name = "picPerfil";

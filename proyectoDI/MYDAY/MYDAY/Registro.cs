@@ -16,7 +16,7 @@ namespace MYDAY
         public Registro()
         {
             InitializeComponent();
-            
+
         }
         private void Registro_Load(object sender, EventArgs e)
         {
@@ -32,21 +32,29 @@ namespace MYDAY
             txtUsuario.Top = lblRegistro.Bottom + 20;
             txtContrasena.Left = (this.ClientSize.Width - txtContrasena.Width) / 2;
             txtContrasena.Top = txtUsuario.Bottom + 20;
+            txtContrasena2.Left = (this.ClientSize.Width - txtContrasena2.Width) / 2;
+            txtContrasena2.Top = txtContrasena.Bottom + 20;
             txtMail.Left = (this.ClientSize.Width - txtMail.Width) / 2;
-            txtMail.Top = txtContrasena.Bottom + 20;
+            txtMail.Top = txtContrasena2.Bottom + 20;
             btnRegistro.Left = (this.ClientSize.Width - btnRegistro.Width) / 2;
+            btnRegistro.Top = txtMail.Bottom + 20;
         }
         private void borrarTextoPlaceholder(object sender, EventArgs e)
         {
+
             TextBox textBox = sender as TextBox;
-            textBox.ForeColor = Color.White;
-            if (textBox != null)
+            if (textBox != null && (textBox.Text == "Nombre de usuario" || textBox.Text == "Contraseña" || textBox.Text == "E-Mail" || textBox.Text == "Confirmar contraseña"))
             {
                 textBox.Text = "";
                 textBox.ForeColor = Color.White;
                 if (textBox == txtContrasena)
                 {
                     txtContrasena.UseSystemPasswordChar = true;
+
+                }
+                if (textBox == txtContrasena2)
+                {
+                    txtContrasena2.UseSystemPasswordChar = true;
                 }
             }
         }
@@ -79,6 +87,13 @@ namespace MYDAY
                 txtContrasena.UseSystemPasswordChar = false;
                 return false;
             }
+            if (txtContrasena.Text != txtContrasena2.Text)
+            {
+                txtContrasena2.ForeColor = Color.Red;
+                txtContrasena2.Text = "Las contraseñas no coinciden";
+                txtContrasena2.UseSystemPasswordChar = false;
+                return false;
+            }
             if (string.IsNullOrWhiteSpace(txtMail.Text) || !Regex.IsMatch(txtMail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
                 txtMail.ForeColor = Color.Red;
@@ -94,7 +109,7 @@ namespace MYDAY
             {
                 return;
             }
-            Usuario usuario = new Usuario(txtUsuario.Text, txtContrasena.Text, txtMail.Text, "");
+            Usuario usuario = new Usuario(txtUsuario.Text, txtContrasena.Text, txtMail.Text);
             ServicioUsuario servicioUsuario = new ServicioUsuario();
             bool ok = await servicioUsuario.RegistrarUsuario(usuario);
             if (ok)
@@ -104,7 +119,7 @@ namespace MYDAY
             }
             else
             {
-                
+
             }
         }
     }

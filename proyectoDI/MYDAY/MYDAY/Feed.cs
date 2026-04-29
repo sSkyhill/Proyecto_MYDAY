@@ -81,7 +81,7 @@ namespace MYDAY
 
                 string json =
                 await cliente.GetStringAsync(
-                "http://localhost:8080/api-proyecto-1.0-SNAPSHOT/rest/publicaciones"
+                "http://localhost:8080/api-proyecto/rest/publicaciones"
                 );
 
 
@@ -103,9 +103,12 @@ namespace MYDAY
 
                 panelFlow.Controls.Clear();
 
-                //Coge solo x publicaciones para no sobrecargar
-                posts = posts.OrderByDescending(p => DateTime.Parse(p.fechaImagen)).Take(10).ToList();
-
+                //Coge solo x publicaciones del día de hoy para no sobrecargar
+                posts = posts
+                    .Where(p => DateTime.Parse(p.fechaImagen).Date == DateTime.Today)
+                    .OrderByDescending(p => DateTime.Parse(p.fechaImagen))
+                    .Take(60)
+                    .ToList();
                 foreach (var p in posts)
                 {
                     PanelPost nuevoPanel = new PanelPost();
@@ -132,6 +135,7 @@ namespace MYDAY
                     }
                     else
                     {
+
                         nuevoPanel.CargarImagen(p.nombreUsuario, p.comentario, p.fechaImagen, null);
                     }
 
@@ -154,11 +158,11 @@ namespace MYDAY
             this.Hide();
             if (perfil.ShowDialog() == DialogResult.OK)
             {
-                
+
                 await CargarFeed();
                 this.Show();
             }
-            else {                 this.Show(); }
+            else { this.Show(); }
         }
     }
 }

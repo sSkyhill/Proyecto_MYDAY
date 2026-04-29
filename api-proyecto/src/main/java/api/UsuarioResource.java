@@ -7,7 +7,6 @@ import jakarta.ws.rs.core.Response.Status;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Base64;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -26,8 +25,8 @@ public class UsuarioResource {
 
         try (Statement st = bd.getConexion().createStatement()) {
 
-            ResultSet rs = st.executeQuery(
-                    "SELECT nombreUsuario, fotoperfil, email FROM usuarios");
+            ResultSet rs =
+                st.executeQuery("SELECT nombreUsuario, email FROM usuarios");
 
             while (rs.next()) {
                 lista.add(mapearFila(rs));
@@ -48,15 +47,19 @@ public class UsuarioResource {
     @GET
     @Path("{nombreUsuario}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUno(@PathParam("nombreUsuario") String nombreUsuario) {
+    public Response getUno(
+            @PathParam("nombreUsuario") String nombreUsuario) {
 
         ConexionBD bd = ConexionBD.getInstancia();
 
-        String sql = "SELECT nombreUsuario, fotoperfil, email FROM usuarios WHERE nombreUsuario = ?";
+        String sql =
+            "SELECT nombreUsuario, email FROM usuarios WHERE nombreUsuario=?";
 
-        try (PreparedStatement ps = bd.getConexion().prepareStatement(sql)) {
+        try (PreparedStatement ps =
+                 bd.getConexion().prepareStatement(sql)) {
 
             ps.setString(1, nombreUsuario);
+
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -91,10 +94,10 @@ public class UsuarioResource {
         }
 
         try {
+            PreparedStatement checkUser =
+                    bd.getConexion().prepareStatement(
+                        "SELECT 1 FROM usuarios WHERE nombreUsuario=?");
 
-            // usuario duplicado
-            PreparedStatement checkUser = bd.getConexion().prepareStatement(
-                    "SELECT 1 FROM usuarios WHERE nombreUsuario=?");
             checkUser.setString(1, u.getNombreUsuario());
 
             if (checkUser.executeQuery().next()) {
@@ -103,9 +106,10 @@ public class UsuarioResource {
                         .build();
             }
 
-            // email duplicado
-            PreparedStatement checkEmail = bd.getConexion().prepareStatement(
-                    "SELECT 1 FROM usuarios WHERE email=?");
+            PreparedStatement checkEmail =
+                    bd.getConexion().prepareStatement(
+                        "SELECT 1 FROM usuarios WHERE email=?");
+
             checkEmail.setString(1, u.getEmail());
 
             if (checkEmail.executeQuery().next()) {
@@ -120,27 +124,18 @@ public class UsuarioResource {
                     .build();
         }
 
-        // HASH PASSWORD
+        String hash =
+            BCrypt.hashpw(u.getContrasena(), BCrypt.gensalt());
 
-        System.out.println(">>>> PASSWORD ORIGINAL: " + u.getContrasena());
+        String sql =
+            "INSERT INTO usuarios (nombreUsuario, email, contrasena) VALUES (?, ?, ?)";
 
-        String hash = BCrypt.hashpw(u.getContrasena(), BCrypt.gensalt());
-
-        System.out.println(">>>> PASSWORD HASH: " + hash);
-        String sql = "INSERT INTO usuarios (nombreUsuario, fotoperfil, email, contrasena) VALUES (?, ?, ?, ?)";
-
-        try (PreparedStatement ps = bd.getConexion().prepareStatement(sql)) {
+        try (PreparedStatement ps =
+                 bd.getConexion().prepareStatement(sql)) {
 
             ps.setString(1, u.getNombreUsuario());
-
-            if (u.getFotoPerfil() != null && !u.getFotoPerfil().isEmpty()) {
-                ps.setBytes(2, Base64.getDecoder().decode(u.getFotoPerfil()));
-            } else {
-                ps.setNull(2, Types.BLOB);
-            }
-
-            ps.setString(3, u.getEmail());
-            ps.setString(4, hash);
+            ps.setString(2, u.getEmail());
+            ps.setString(3, hash);
 
             ps.executeUpdate();
 
@@ -166,11 +161,14 @@ public class UsuarioResource {
 
         ConexionBD bd = ConexionBD.getInstancia();
 
-        String sql = "SELECT contrasena FROM usuarios WHERE nombreUsuario = ?";
+        String sql =
+            "SELECT contrasena FROM usuarios WHERE nombreUsuario=?";
 
-        try (PreparedStatement ps = bd.getConexion().prepareStatement(sql)) {
+        try (PreparedStatement ps =
+                 bd.getConexion().prepareStatement(sql)) {
 
             ps.setString(1, login.getNombreUsuario());
+
             ResultSet rs = ps.executeQuery();
 
             if (!rs.next()) {
@@ -181,7 +179,6 @@ public class UsuarioResource {
 
             String hash = rs.getString("contrasena");
 
-            // ✔ CHECK PASSWORD
             if (!BCrypt.checkpw(login.getContrasena(), hash)) {
                 return Response.status(Status.UNAUTHORIZED)
                         .entity("Login incorrecto")
@@ -203,25 +200,24 @@ public class UsuarioResource {
     @PUT
     @Path("{nombreUsuario}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response actualizar(@PathParam("nombreUsuario") String nombreUsuario, Usuario u) {
+    public Response actualizar(
+            @PathParam("nombreUsuario") String nombreUsuario,
+            Usuario u) {
 
         ConexionBD bd = ConexionBD.getInstancia();
 
-        String hash = BCrypt.hashpw(u.getContrasena(), BCrypt.gensalt());
+        String hash =
+            BCrypt.hashpw(u.getContrasena(), BCrypt.gensalt());
 
-        String sql = "UPDATE usuarios SET fotoperfil=?, email=?, contrasena=? WHERE nombreUsuario=?";
+        String sql =
+            "UPDATE usuarios SET email=?, contrasena=? WHERE nombreUsuario=?";
 
-        try (PreparedStatement ps = bd.getConexion().prepareStatement(sql)) {
+        try (PreparedStatement ps =
+                 bd.getConexion().prepareStatement(sql)) {
 
-            if (u.getFotoPerfil() != null && !u.getFotoPerfil().isEmpty()) {
-                ps.setBytes(1, Base64.getDecoder().decode(u.getFotoPerfil()));
-            } else {
-                ps.setNull(1, Types.BLOB);
-            }
-
-            ps.setString(2, u.getEmail());
-            ps.setString(3, hash);
-            ps.setString(4, nombreUsuario);
+            ps.setString(1, u.getEmail());
+            ps.setString(2, hash);
+            ps.setString(3, nombreUsuario);
 
             ps.executeUpdate();
 
@@ -239,12 +235,14 @@ public class UsuarioResource {
     // --------------------------------------------------
     @DELETE
     @Path("{nombreUsuario}")
-    public Response eliminar(@PathParam("nombreUsuario") String nombreUsuario) {
+    public Response eliminar(
+            @PathParam("nombreUsuario") String nombreUsuario) {
 
         ConexionBD bd = ConexionBD.getInstancia();
 
-        try (PreparedStatement ps = bd.getConexion().prepareStatement(
-                "DELETE FROM usuarios WHERE nombreUsuario=?")) {
+        try (PreparedStatement ps =
+                 bd.getConexion().prepareStatement(
+                     "DELETE FROM usuarios WHERE nombreUsuario=?")) {
 
             ps.setString(1, nombreUsuario);
 
@@ -268,12 +266,6 @@ public class UsuarioResource {
 
         u.setNombreUsuario(rs.getString("nombreUsuario"));
         u.setEmail(rs.getString("email"));
-
-        byte[] foto = rs.getBytes("fotoperfil");
-
-        if (foto != null) {
-            u.setFotoPerfil(Base64.getEncoder().encodeToString(foto));
-        }
 
         return u;
     }

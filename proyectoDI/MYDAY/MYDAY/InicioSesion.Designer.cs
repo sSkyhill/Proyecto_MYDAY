@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
             txtUsuario = new TextBox();
             txtContrasena = new TextBox();
             btnInicio = new Button();
@@ -123,6 +124,7 @@
             Controls.Add(txtContrasena);
             Controls.Add(txtUsuario);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "InicioSesion";
             Text = "Inicio Sesion";

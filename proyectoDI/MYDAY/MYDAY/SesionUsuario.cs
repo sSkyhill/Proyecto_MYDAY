@@ -8,6 +8,6 @@ namespace MYDAY
 {
     public static class SesionUsuario
     {
-                public static string NombreUsuario { get; set; }
+        public static string NombreUsuario { get; set; }
     }
 }

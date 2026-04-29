@@ -39,11 +39,7 @@ public class AdaptadorPerfil extends RecyclerView.Adapter<AdaptadorPerfil.PhotoV
     @Override
     public void onBindViewHolder(PhotoViewHolder holder, int position) {
         Usuario usu = this.usuarios.get(position);
-        String foto = usu.getFotoperfil();
 
-        byte[] decoded = android.util.Base64.decode(foto, android.util.Base64.DEFAULT);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
-        holder.getfotoSubida().setImageBitmap(bitmap);
     }
 
     @Override
@@ -56,10 +52,8 @@ public class AdaptadorPerfil extends RecyclerView.Adapter<AdaptadorPerfil.PhotoV
 
         public PhotoViewHolder(View itemView) {
             super(itemView);
-            this.fotoPerfil = itemView.findViewById(R.id.fotoSperfil);
+
         }
-        public ImageView getfotoSubida() {
-            return fotoPerfil;
-        }
+
     }
 }

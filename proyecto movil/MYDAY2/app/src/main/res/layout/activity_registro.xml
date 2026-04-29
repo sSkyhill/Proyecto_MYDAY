@@ -28,7 +28,7 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/editNombre2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -51,10 +51,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Contraseña"
-        android:inputType="text"
+        android:inputType="text|textPassword"
         android:maxLength="30"
-        app:layout_constraintBottom_toTopOf="@+id/editEmail"
+        app:layout_constraintBottom_toTopOf="@+id/editConfirmaContra"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNombre2" />
 
@@ -65,23 +66,25 @@
         android:ems="10"
         android:hint="E-Mail"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/editNombreyAp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistrarse"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editContra2" />
+        app:layout_constraintTop_toBottomOf="@+id/editConfirmaContra" />
 
     <EditText
-        android:id="@+id/editNombreyAp"
+        android:id="@+id/editConfirmaContra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Nombre y apellidos"
-        android:inputType="text|textNoSuggestions"
+        android:hint="Confirma contraseña"
+        android:inputType="text|textPassword|textNoSuggestions"
         android:maxLength="70"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegistrarse"
+        app:layout_constraintBottom_toTopOf="@+id/editEmail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/editContra2" />
 
     <Button
         android:id="@+id/btnRegistrarse"
@@ -92,5 +95,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNombreyAp" />
+        app:layout_constraintTop_toBottomOf="@+id/editConfirmaContra" />
 </androidx.constraintlayout.widget.ConstraintLayout>

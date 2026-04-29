@@ -25,8 +25,7 @@ public class UsuarioResource {
 
         try (Statement st = bd.getConexion().createStatement()) {
 
-            ResultSet rs =
-                st.executeQuery("SELECT nombreUsuario, email FROM usuarios");
+            ResultSet rs = st.executeQuery("SELECT nombreUsuario, email FROM usuarios");
 
             while (rs.next()) {
                 lista.add(mapearFila(rs));
@@ -52,11 +51,9 @@ public class UsuarioResource {
 
         ConexionBD bd = ConexionBD.getInstancia();
 
-        String sql =
-            "SELECT nombreUsuario, email FROM usuarios WHERE nombreUsuario=?";
+        String sql = "SELECT nombreUsuario, email FROM usuarios WHERE nombreUsuario=?";
 
-        try (PreparedStatement ps =
-                 bd.getConexion().prepareStatement(sql)) {
+        try (PreparedStatement ps = bd.getConexion().prepareStatement(sql)) {
 
             ps.setString(1, nombreUsuario);
 
@@ -92,11 +89,15 @@ public class UsuarioResource {
                     .entity("Usuario obligatorio")
                     .build();
         }
+        if (u.getContrasena() == null || u.getContrasena().length() < 6) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity("Contraseña debe tener al menos 6 caracteres")
+                    .build();
+        }
 
         try {
-            PreparedStatement checkUser =
-                    bd.getConexion().prepareStatement(
-                        "SELECT 1 FROM usuarios WHERE nombreUsuario=?");
+            PreparedStatement checkUser = bd.getConexion().prepareStatement(
+                    "SELECT 1 FROM usuarios WHERE nombreUsuario=?");
 
             checkUser.setString(1, u.getNombreUsuario());
 
@@ -106,9 +107,8 @@ public class UsuarioResource {
                         .build();
             }
 
-            PreparedStatement checkEmail =
-                    bd.getConexion().prepareStatement(
-                        "SELECT 1 FROM usuarios WHERE email=?");
+            PreparedStatement checkEmail = bd.getConexion().prepareStatement(
+                    "SELECT 1 FROM usuarios WHERE email=?");
 
             checkEmail.setString(1, u.getEmail());
 
@@ -124,14 +124,11 @@ public class UsuarioResource {
                     .build();
         }
 
-        String hash =
-            BCrypt.hashpw(u.getContrasena(), BCrypt.gensalt());
+        String hash = BCrypt.hashpw(u.getContrasena(), BCrypt.gensalt());
 
-        String sql =
-            "INSERT INTO usuarios (nombreUsuario, email, contrasena) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO usuarios (nombreUsuario, email, contrasena) VALUES (?, ?, ?)";
 
-        try (PreparedStatement ps =
-                 bd.getConexion().prepareStatement(sql)) {
+        try (PreparedStatement ps = bd.getConexion().prepareStatement(sql)) {
 
             ps.setString(1, u.getNombreUsuario());
             ps.setString(2, u.getEmail());
@@ -161,11 +158,9 @@ public class UsuarioResource {
 
         ConexionBD bd = ConexionBD.getInstancia();
 
-        String sql =
-            "SELECT contrasena FROM usuarios WHERE nombreUsuario=?";
+        String sql = "SELECT contrasena FROM usuarios WHERE nombreUsuario=?";
 
-        try (PreparedStatement ps =
-                 bd.getConexion().prepareStatement(sql)) {
+        try (PreparedStatement ps = bd.getConexion().prepareStatement(sql)) {
 
             ps.setString(1, login.getNombreUsuario());
 
@@ -206,14 +201,11 @@ public class UsuarioResource {
 
         ConexionBD bd = ConexionBD.getInstancia();
 
-        String hash =
-            BCrypt.hashpw(u.getContrasena(), BCrypt.gensalt());
+        String hash = BCrypt.hashpw(u.getContrasena(), BCrypt.gensalt());
 
-        String sql =
-            "UPDATE usuarios SET email=?, contrasena=? WHERE nombreUsuario=?";
+        String sql = "UPDATE usuarios SET email=?, contrasena=? WHERE nombreUsuario=?";
 
-        try (PreparedStatement ps =
-                 bd.getConexion().prepareStatement(sql)) {
+        try (PreparedStatement ps = bd.getConexion().prepareStatement(sql)) {
 
             ps.setString(1, u.getEmail());
             ps.setString(2, hash);
@@ -240,9 +232,8 @@ public class UsuarioResource {
 
         ConexionBD bd = ConexionBD.getInstancia();
 
-        try (PreparedStatement ps =
-                 bd.getConexion().prepareStatement(
-                     "DELETE FROM usuarios WHERE nombreUsuario=?")) {
+        try (PreparedStatement ps = bd.getConexion().prepareStatement(
+                "DELETE FROM usuarios WHERE nombreUsuario=?")) {
 
             ps.setString(1, nombreUsuario);
 

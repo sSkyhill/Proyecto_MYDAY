@@ -1,26 +1,16 @@
 package com.example.myday;
 
-import android.graphics.Color;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.example.myday.databinding.ActivityRegistroBinding;
 
 public class Registro extends AppCompatActivity {
     Button btnRegistro;
@@ -43,31 +33,75 @@ public class Registro extends AppCompatActivity {
         });
         editMail = findViewById(R.id.editEmail);
         editUsuario = findViewById(R.id.editNombre2);
-        editNombreApellidos = findViewById(R.id.editNombreyAp);
+        editNombreApellidos = findViewById(R.id.editConfirmaContra);
         editContrasena = findViewById(R.id.editContra2);
         btnRegistro = findViewById(R.id.btnRegistrarse);
-        btnRegistro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(editUsuario.getText().isEmpty()){
-                    editUsuario.setHint("Introduce un nombre de usuario");
-                    editUsuario.setHintTextColor(Color.RED);
-                }
-                if(editContrasena.getText().isEmpty()){
-                    editContrasena.setHint("Introduce una contraseña");
-                    editContrasena.setHintTextColor(Color.RED);
-                }
-                if(editNombreApellidos.getText().isEmpty()){
-                    editNombreApellidos.setHint("Introduce nombre y apellidos");
-                    editNombreApellidos.setHintTextColor(Color.RED);
-                }
-                if(editMail.getText().isEmpty()){
-                    editMail.setHint("Introduce un E-Mail");
-                    editMail.setHintTextColor(Color.RED);
-                }
+        btnRegistro.setOnClickListener(v -> {
 
+            String usuario = editUsuario.getText().toString().trim();
+            String email = editMail.getText().toString().trim();
+            String pass = editContrasena.getText().toString().trim();
 
+            boolean ok = true;
+
+            if (usuario.isEmpty()) {
+                editUsuario.setError("Introduce usuario");
+                ok = false;
             }
+
+            if (email.isEmpty()) {
+                editMail.setError("Introduce email");
+                ok = false;
+            }
+
+            if (pass.isEmpty()) {
+                editContrasena.setError("Introduce contraseña");
+                ok = false;
+            }
+
+            if (pass.length() < 6) {
+                editContrasena.setError("La contraseña debe tener mínimo 6 caracteres");
+                return;
+            }
+
+            if (!ok) return;
+
+
+
+
+                new Thread(() -> {
+
+                    ApiRest api = new ApiRest();
+
+                    String respuesta = api.registrarUsuario(usuario, email, pass);
+
+                    runOnUiThread(() -> {
+
+                        switch (respuesta) {
+
+                            case "Usuario ya existe":
+                                editUsuario.setError("Ese usuario ya existe");
+                                break;
+
+                            case "Email ya existe":
+                                editMail.setError("Ese email ya está registrado");
+                                break;
+
+                            case "Usuario creado":
+                                finish(); // registro OK
+                                break;
+
+                            default:
+                                editUsuario.setError("Error de conexión o servidor");
+                                break;
+                        }
+
+                    });
+
+                }).start();
+
+
+
         });
 
     }

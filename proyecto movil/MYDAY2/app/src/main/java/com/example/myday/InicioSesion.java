@@ -46,49 +46,50 @@ public class InicioSesion extends AppCompatActivity {
         editContrasena = findViewById(R.id.editContrasena);
         editNombre.setFilters(new InputFilter[]{new InputFilter.LengthFilter(20)});
 
-
-
-        btnIniciar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-
-                boolean flag = true;
-                if(editNombre.getText().equals("")){
-                    editNombre.setHint("Introduce un nombre de usuario");
-                    editNombre.setHintTextColor(Color.RED);
-                    flag = false;
-                }else{
-                    nombreUsuario = editNombre.getText().toString();
-                    Log.i("Consola",nombreUsuario);
-                    flag = true;
-                }
-
-                if(editContrasena.getText().equals("")){
-                    editContrasena.setHint("Introduce una contraseña");
-                    editContrasena.setHintTextColor(Color.RED);
-                    flag = false;
-                }else {
-                    contrasena = editContrasena.getText().toString();
-                    flag = true;
-                }
-                if(flag){
-                    Intent i = new Intent(InicioSesion.this, MainActivity.class);
-                    startActivity(i);
-                }
-
-
-            }
-
+        txtRegistro.setOnClickListener(v -> {
+            Intent i = new Intent(InicioSesion.this, Registro.class);
+            startActivity(i);
         });
 
-        txtRegistro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(InicioSesion.this,Registro.class);
-                startActivity(i);
+        btnIniciar.setOnClickListener(v -> {
+
+            String nombre = editNombre.getText().toString().trim();
+            String pass = editContrasena.getText().toString().trim();
+
+            boolean flag = true;
+
+            if (nombre.isEmpty()) {
+                editNombre.setError("Introduce un nombre de usuario");
+                flag = false;
             }
+
+            if (pass.isEmpty()) {
+                editContrasena.setError("Introduce una contraseña");
+                flag = false;
+            }
+
+            if (!flag) return;
+
+            ApiRest api = new ApiRest();
+
+            new Thread(() -> {
+
+                boolean ok = api.loginUsuario(nombre, pass);
+
+                runOnUiThread(() -> {
+
+                    if (ok) {
+                        Intent i = new Intent(InicioSesion.this, MainActivity.class);
+                        startActivity(i);
+                        finish();
+                    } else {
+
+                        btnIniciar.setError("Login incorrecto");
+                    }
+
+                });
+
+            }).start();
         });
     }
 }

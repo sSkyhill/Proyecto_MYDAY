@@ -2,6 +2,8 @@ package com.example.myday;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,67 +13,75 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class AdaptadorFeed extends RecyclerView.Adapter<AdaptadorFeed.MyViewHolder>{
-//    ArrayList<DatosPerfiles> datosPerfiles;
-    List<Usuario> usuarios;
-    public AdaptadorFeed(List<Usuario> usuarios){
-        this.usuarios = usuarios;
+public class AdaptadorFeed extends RecyclerView.Adapter<AdaptadorFeed.MyViewHolder> {
+
+    private List<Publicacion> publicaciones;
+
+    public AdaptadorFeed(List<Publicacion> publicaciones) {
+        this.publicaciones = publicaciones;
     }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View elemento= LayoutInflater.from(parent.getContext()).inflate(R.layout.celda,
-                parent, false);
-        MyViewHolder mvh = new MyViewHolder(elemento);
-        return mvh;
-        // return new MyViewHolder(elemento);
+
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.celda, parent, false);
+
+        return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Usuario usu=this.usuarios.get(position);
-        String foto = usu.getFotoperfil();
 
-        byte[] decoded = android.util.Base64.decode(foto, android.util.Base64.DEFAULT);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
-        holder.getNombre().setText(usu.getNombreUsuario());
-        holder.getFotoPerfil().setImageBitmap(bitmap);
-        holder.getfotoSubida().setImageBitmap(bitmap);
+        Publicacion pub = publicaciones.get(position);
 
+        // 🧑 Nombre usuario
+        holder.nombreUsuario.setText(pub.getNombreUsuario());
 
-//        if (selectedPos == position)
-//            holder.itemView.setBackgroundResource(R.color.seleccionado);
-//        else holder.itemView.setBackgroundResource(R.color.colorcelda);
+        // 🖼 Imagen publicación
+        if (pub.getImagenBase64() != null && !pub.getImagenBase64().isEmpty()) {
+            try {
+                byte[] bytes = Base64.decode(pub.getImagenBase64(), Base64.DEFAULT);
+
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+
+                holder.imagen.setImageBitmap(bitmap);
+
+            } catch (Exception e) {
+                holder.imagen.setImageResource(android.R.color.darker_gray);
+            }
+        } else {
+            holder.imagen.setImageResource(android.R.color.darker_gray);
+        }
+        String comentario = pub.getComentario() != null ? pub.getComentario() : "";
+        String fecha = pub.getFechaImagen() != null ? pub.getFechaImagen() : "";
+
+        holder.comentarioFecha.setText(comentario + "\n" + fecha);
+        holder.comentarioFecha.setTextColor(Color.WHITE);
     }
 
     @Override
     public int getItemCount() {
-        return this.usuarios.size();
+        return publicaciones != null ? publicaciones.size() : 0;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    // --------------------------------------------------
 
-        private TextView nombreUsuario;
-        ImageView fotoPerfil;
-        ImageView fotoSubida;
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public MyViewHolder(View viewElemento) {
-            super(viewElemento);
-            this.nombreUsuario = viewElemento.findViewById(R.id.textViewNombreUs);
-            this.fotoPerfil = viewElemento.findViewById(R.id.fotoPerf);
-            this.fotoSubida = viewElemento.findViewById(R.id.fotoFeed);
-        }
-        public TextView getNombre() {
-            return nombreUsuario;
-        }
-        public ImageView getFotoPerfil() {
-            return fotoPerfil;
-        }
-        public ImageView getfotoSubida() {
-            return fotoSubida;
+        TextView nombreUsuario;
+        ImageView imagen;
+        TextView comentarioFecha;
+
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            nombreUsuario = itemView.findViewById(R.id.textViewNombreUs);
+            imagen = itemView.findViewById(R.id.fotoFeed);
+            comentarioFecha = itemView.findViewById(R.id.txtComentario);
         }
     }
 }

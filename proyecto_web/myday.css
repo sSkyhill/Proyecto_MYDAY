@@ -1,171 +1,113 @@
-:root {
-      --bg: #f5f5f5;
-      --card: #ffffff;
-      --primary: #6aa8ff;
-      --secondary: #7fc66a;
-      --text: #222;
-      --muted: #777;
-      --border: #e0e0e0;
-    }
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f5f5f5;
+}
 
-    * { box-sizing: border-box; }
- 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-     .contenidoNav {
-            display: none;
-            
-            
-        }
+/* CONTENEDOR PRINCIPAL */
+.paginaMyday{
+  width:360px;
+  min-height:640px;   /* CAMBIO IMPORTANTE */
+  margin:auto;
+  background:white;
+  border-radius:20px;
 
-    .paginaMyday {
-      
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.08);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
+  /* ❌ QUITADO overflow:hidden */
+  overflow-y:auto;    /* permite scroll */
+}
 
-    
-    .login {
-        width: 360px;
-      max-width: 95vw;
-      min-height: 640px;
-      padding: 40px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      flex: 1;
-      
-    }
+/* LOGIN */
+.login{
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
 
-    .logo {
-      text-align: center;
-      font-size: 42px;
-      font-weight: 600;
-      letter-spacing: .5px;
-      margin: 20px 0 30px;
-    }
+.logo{
+  font-size:40px;
+  text-align:center;
+}
 
-    .logo .my { color: var(--primary); }
-    .logo .day { color: var(--secondary); }
+.my{color:#6aa8ff;}
+.day{color:#7fc66a;}
 
-    .campos {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+/* INPUTS */
+input,textarea{
+  padding:10px;
+  border:1px solid #ddd;
+  border-radius:8px;
+}
 
-    .campos label {
-      font-size: 14px;
-      color: var(--muted);
-    }
+/* BOTONES */
+button{
+  padding:10px;
+  border:none;
+  background:#6aa8ff;
+  color:white;
+  border-radius:8px;
+}
 
-    .campos input {
-      border: none;
-      border-bottom: 1px solid var(--border);
-      padding: 6px 2px;
-      font-size: 16px;
-      outline: none;
-    }
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-around;
+  padding:10px;
+  border-bottom:1px solid #ddd;
+}
 
-    .field input:focus { border-color: var(--primary); }
+/* POSTS */
+.post{
+  background:white;
+  margin:10px;
+  padding:10px;
+  border-radius:10px;
+}
 
-    .btnInicio {
-      margin-top: 12px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 12px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
+/* IMÁGENES FEED */
+.post img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:10px;
+}
 
-    .btnInicio:hover { opacity: .9; }
-
-    .textoRegistro {
-      margin-top: auto;
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .textoRegistro a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    
-    .pagina_main {
-        width: 100%;
-        height: 100%;
-      display: none; 
-      flex: 1;
-      background: #606060;
-      color: #fff;
-      position: relative;
-      
-
-    }
-
-  .barra {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 64px;
-    border-top: 1px solid #e0e0e0;
-    background: #ffffff;
-  }
-
-  .btnBarra {
-    border: none;
-    background: none;
-    font-size: 13px;
-    font-weight: 600;
-    color: #777;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .btnBarra.primary {
-    color: #6aa8ff; 
-    font-weight: 700;
-  }
-
-  .btnBarra:hover {
-    background: rgba(0, 0, 0, 0.03);
-  }
+/* PERFIL IMÁGENES */
+#misFotos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  padding: 10px;
+}
 
 
-    
+.perfil-post {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
 
-    
+.perfil-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    
+/* LOGO HEADER */
+.header-logo {
+  text-align:center;
+  padding:15px 0;
+}
 
-    
-
-    
+.header-logo img {
+  width:120px;
+  height:auto;
+}
+.logout-small {
+  font-size: 14px;
+  padding: 4px 8px;
+  background: transparent;
+  color: #ff5c5c;
+  border: none;
+}

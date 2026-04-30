@@ -3,3 +3,4 @@ api\Usuario.class
 api\UsuarioResource.class
 api\PublicacionResource.class
 api\Publicacion.class
+api\CORSFilter.class

@@ -1,119 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="myday.css">
-    <title>MY.DAY</title>
-
+<meta charset="UTF-8">
+<title>MY.DAY</title>
+<link rel="stylesheet" href="myday.css">
 </head>
 
 <body>
-    <div class="paginaMyday">
 
+<div class="paginaMyday">
 
-        <section class="login" id="login">
-            <div class="logo"><span class="my">MY.</span><span class="day">DAY</span></div>
+  <!-- LOGIN -->
+  <section class="login" id="login">
 
-            <div class="campos">
-                <label for="usuario">Nombre de usuario</label>
-                <input id="usuario" type="text" placeholder="" />
-            </div>
+  <div class="logo">
+    <span class="my">MY.</span><span class="day">DAY</span>
+  </div>
 
-            <div class="campos">
-                <label for="contrasena">Contraseña</label>
-                <input id="contrasena" type="password" placeholder="" />
-            </div>
+  <!-- LOGIN FORM -->
+  <div id="loginForm">
 
-            <button class="btnInicio" onclick="loggear()">
-                💬 EMPEZAR EL DÍA
-            </button>
+    <input id="usuario" placeholder="Usuario">
+    <input id="contrasena" type="password" placeholder="Contraseña">
 
-            <div class="textoRegistro">
-                ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
-            </div>
-        </section>
+    <button onclick="hacerLogin()">Entrar</button>
+    <button onclick="mostrarRegistro()">Registrarse</button>
 
+  </div>
 
-        <section class="pagina_main" id="pagina_main">
-            <nav class="barra">
-                <button class="btnBarra" onclick="cambiarSeccion('inicio')">Inicio</button>
-                <button class="btnBarra" onclick="cambiarSeccion('subirFoto')">Subir foto</button>
-                <button class="btnBarra" onclick="cambiarSeccion('perfil')">Perfil</button>
-            </nav>
+  <!-- REGISTRO FORM -->
+  <div id="registerForm" style="display:none;">
 
-            <div class="contenidoNav" id="inicio">
-                <h2>Feed de Publicaciones</h2>
-                <p>Aquí aparecerán las publicaciones...</p>
-            </div>
-            <div class="contenidoNav" id="subirFoto">
-                <h2>Subir Foto</h2>
-                <textarea placeholder="Escribe algo..." style="resize: none;" maxlength="255"></textarea><br>
-                <input type="file" accept="image/*"><br>
-                <button>Publicar</button>
-            </div>
-            <div class="contenidoNav" id="perfil">
-                <h2>Mi Perfil</h2>
-                <p id="nombreUsuario">Usuario</p>
-                <p>Email: usuario@myday.com</p>
-            </div>
+    <input id="reg_usuario" placeholder="Usuario">
+    <input id="reg_email" placeholder="Email">
+    <input id="reg_pass" type="password" placeholder="Contraseña">
+    <input id="reg_pass2" type="password" placeholder="Confirmar contraseña">
 
+    <button onclick="registrar()">Crear cuenta</button>
+    <button onclick="mostrarLogin()">Volver</button>
 
-        </section>
+  </div>
+
+</section>
+
+  <!-- APP -->
+  <section id="app" style="display:none;">
+
+    
+    <div class="header-logo">
+      <img src="myday.png" alt="logo">
     </div>
 
-    <script>
-        async function loggear() {
-            const usuario = document.getElementById("usuario").value;
-            const contrasena = document.getElementById("contrasena").value;
+    <nav>
+      <button onclick="mostrar('feed')">Inicio</button>
+      <button onclick="mostrar('subir')">Subir</button>
+      <button onclick="mostrar('perfil')">Perfil</button>
+      <button class="logout-small" onclick="cerrarSesion()">Cerrar sesión</button>
+    </nav>
 
-            if (!usuario || !contrasena) {
-                alert("Rellena todos los campos")
-                return;
-            }
-            try {
-                const response = await fetch("http://localhost:8080/api-proyecto/rest/usuarios/", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        nombreUsuario: usuario,
-                        contrasena: contrasena
-                    })
-                });
+    <!-- FEED -->
+    <div id="feed"></div>
 
-                if (response.ok) {
-                    // LOGIN OK
-                    document.getElementById('login').style.display = 'none';
-                    document.getElementById('pagina_main').style.display = 'flex';
+    <!-- SUBIR -->
+    <div id="subir" style="display:none;">
+      <textarea id="texto"></textarea>
+      <input type="file" id="imagen">
+      <button onclick="subirPost()">Publicar</button>
+    </div>
 
-                    document.getElementById("nombreUsuario").innerText = usuario;
-                    
-                } else {
-                    const msg = await response.text();
-                    alert("Error login: " + msg);
-                }
+    <!-- PERFIL -->
+    <div id="perfil" style="display:none;">
+      <h3 id="nombrePerfil"></h3>
+      <div id="misFotos"></div>
+    </div>
 
-            } catch (error) {
-                console.error(error);
-                alert("Error de conexión con la API");
-            }
+  </section>
 
-        }
-        function enterApp() {
-            document.getElementById('login').style.display = 'none';
-            document.getElementById('pagina_main').style.display = 'flex';
+</div>
 
-        }
-        function cambiarSeccion(seccion) {
-            document.getElementById('inicio').style.display = 'none';
-            document.getElementById('subirFoto').style.display = 'none';
-            document.getElementById('perfil').style.display = 'none';
-            document.getElementById(seccion).style.display = 'block';
-        }
-    </script>
+<script src="app.js"></script>
+
 </body>
-
 </html>

@@ -68,8 +68,7 @@ public class PublicacionResource {
                 ps.setBytes(
                         3,
                         Base64.getDecoder()
-                                .decode(
-                                        p.getImagenBase64()));
+                                .decode( p.getImagenBase64().replaceAll("\\s+", "")));
             } else {
                 ps.setNull(
                         3,

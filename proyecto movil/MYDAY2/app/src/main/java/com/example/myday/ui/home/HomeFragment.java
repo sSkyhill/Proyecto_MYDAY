@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -67,6 +68,9 @@ public class HomeFragment extends Fragment {
                     }
 
                     Log.d("FEED", "Publicaciones recibidas: " + datos.size());
+                    if (datos.size()==0){
+                        Toast.makeText(getActivity().getApplicationContext(), "No hay publicaciones el día de hoy,¡Publica una!", Toast.LENGTH_SHORT).show();
+                    }
 
                     publicaciones.clear();
                     publicaciones.addAll(datos);

@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\perfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\myday\\formsubirpubli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -71,7 +71,7 @@
       "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\botoncircular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|c:\\users\\skyyh\\documents\\coding\\2dam\\proyecto\\proyectodi\\myday\\myday\\botoncircular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\myday\\botoncircular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BAE5405A-B1C4-412F-BD45-ADB679145F8C}|MYDAY\\MYDAY.csproj|solutionrelative:myday\\botoncircular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -98,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 256,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -119,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Registro.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Registro.cs",
               "RelativeDocumentMoniker": "MYDAY\\Registro.cs",
@@ -131,32 +131,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Registro.cs",
               "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Registro.cs",
               "RelativeDocumentMoniker": "MYDAY\\Registro.cs",
               "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Registro.cs",
               "RelativeToolTip": "MYDAY\\Registro.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAwwDMAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwC8AAADDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-29T10:11:23.96Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Perfil.cs [Dise\u00F1o]",
+              "DocumentIndex": 3,
+              "Title": "Perfil.cs [Design]",
               "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Perfil.cs",
               "RelativeDocumentMoniker": "MYDAY\\Perfil.cs",
-              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Perfil.cs [Dise\u00F1o]",
-              "RelativeToolTip": "MYDAY\\Perfil.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Perfil.cs [Design]",
+              "RelativeToolTip": "MYDAY\\Perfil.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-27T13:24:32.441Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Perfil.cs",
               "DocumentMoniker": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Perfil.cs",
               "RelativeDocumentMoniker": "MYDAY\\Perfil.cs",
@@ -176,8 +176,7 @@
               "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\FormSubirPubli.cs [Dise\u00F1o]",
               "RelativeToolTip": "MYDAY\\FormSubirPubli.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T08:49:30.53Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-04-27T08:49:30.53Z"
             },
             {
               "$type": "Document",
@@ -189,8 +188,7 @@
               "RelativeToolTip": "MYDAY\\ServicioUsuario.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAYwDkAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T13:01:23.276Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-28T13:01:23.276Z"
             },
             {
               "$type": "Document",
@@ -214,8 +212,7 @@
               "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\InicioSesion.cs [Dise\u00F1o]",
               "RelativeToolTip": "MYDAY\\InicioSesion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T10:14:00.257Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-04-23T10:14:00.257Z"
             },
             {
               "$type": "Document",
@@ -239,8 +236,7 @@
               "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\Feed.cs [Dise\u00F1o]",
               "RelativeToolTip": "MYDAY\\Feed.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T10:18:31.363Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-04-27T10:18:31.363Z"
             },
             {
               "$type": "Document",
@@ -251,8 +247,7 @@
               "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\PanelPost.cs [Dise\u00F1o]",
               "RelativeToolTip": "MYDAY\\PanelPost.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T07:21:08.737Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-04-27T07:21:08.737Z"
             },
             {
               "$type": "Document",
@@ -264,8 +259,7 @@
               "RelativeToolTip": "MYDAY\\UsuarioLogin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T10:26:05.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-29T10:26:05.162Z"
             },
             {
               "$type": "Document",
@@ -277,8 +271,7 @@
               "RelativeToolTip": "MYDAY\\Usuario.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAlwA4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T10:26:08.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-29T10:26:08.986Z"
             },
             {
               "$type": "Document",
@@ -290,8 +283,7 @@
               "RelativeToolTip": "MYDAY\\SesionUsuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T10:25:39.001Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-29T10:25:39.001Z"
             },
             {
               "$type": "Document",
@@ -303,8 +295,7 @@
               "RelativeToolTip": "MYDAY\\Publicacion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T10:25:44.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-29T10:25:44.233Z"
             },
             {
               "$type": "Document",
@@ -328,8 +319,7 @@
               "ToolTip": "C:\\Users\\skyyh\\Documents\\Coding\\2DAM\\PROYECTO\\proyectoDI\\MYDAY\\MYDAY\\BotonCircular.cs [Dise\u00F1o]",
               "RelativeToolTip": "MYDAY\\BotonCircular.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T10:42:45.108Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-04-29T10:42:45.108Z"
             },
             {
               "$type": "Document",
@@ -341,8 +331,7 @@
               "RelativeToolTip": "MYDAY\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T10:42:25.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-29T10:42:25.82Z"
             },
             {
               "$type": "Document",
@@ -354,8 +343,7 @@
               "RelativeToolTip": "MYDAY\\PanelPost.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAswE4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T09:37:29.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-27T09:37:29.865Z"
             },
             {
               "$type": "Document",

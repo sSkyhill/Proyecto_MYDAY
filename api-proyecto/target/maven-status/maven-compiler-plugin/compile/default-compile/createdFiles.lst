@@ -1,7 +1,5 @@
-api\Imagen.class
+api\ConexionBD.class
 api\Usuario.class
-api\ImagenResource.class
+api\UsuarioResource.class
 api\PublicacionResource.class
 api\Publicacion.class
-api\ConexionBD.class
-api\UsuarioResource.class

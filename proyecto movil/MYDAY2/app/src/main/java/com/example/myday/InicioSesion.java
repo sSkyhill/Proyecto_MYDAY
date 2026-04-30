@@ -1,6 +1,7 @@
 package com.example.myday;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -74,11 +75,18 @@ public class InicioSesion extends AppCompatActivity {
 
             new Thread(() -> {
 
-                boolean ok = api.loginUsuario(nombre, pass);
+                String user = api.loginUsuario(
+                        editNombre.getText().toString(),
+                        editContrasena.getText().toString()
+                );
 
                 runOnUiThread(() -> {
 
-                    if (ok) {
+                    if (user!= null) {
+
+
+                        SesionUsuario.setUsuario(user);
+
                         Intent i = new Intent(InicioSesion.this, MainActivity.class);
                         startActivity(i);
                         finish();

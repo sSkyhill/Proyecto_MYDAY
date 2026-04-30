@@ -66,9 +66,6 @@ public class Registro extends AppCompatActivity {
 
             if (!ok) return;
 
-
-
-
                 new Thread(() -> {
 
                     ApiRest api = new ApiRest();

@@ -43,9 +43,13 @@ namespace MYDAY
         {
 
             TextBox textBox = sender as TextBox;
-            if (textBox != null && (textBox.Text == "Nombre de usuario" || textBox.Text == "Contraseña" || textBox.Text == "E-Mail" || textBox.Text == "Confirmar contraseña"))
+            if (textBox != null)
             {
-                textBox.Text = "";
+                if(textBox.Text == "Nombre de usuario" || textBox.Text == "E-Mail"|| textBox.Text.Contains("Contraseña") || textBox.Text =="Confirmar contraseña" || textBox.Text.Contains("Debe"))
+                {
+
+                    textBox.Text = "";
+                }
                 textBox.ForeColor = Color.White;
                 if (textBox == txtContrasena)
                 {
@@ -90,8 +94,11 @@ namespace MYDAY
             if (txtContrasena.Text != txtContrasena2.Text)
             {
                 txtContrasena2.ForeColor = Color.Red;
+                txtContrasena.ForeColor = Color.Red;
+                txtContrasena.Text = "Las contraseñas no coinciden";
                 txtContrasena2.Text = "Las contraseñas no coinciden";
                 txtContrasena2.UseSystemPasswordChar = false;
+                txtContrasena.UseSystemPasswordChar = false;
                 return false;
             }
             if (string.IsNullOrWhiteSpace(txtMail.Text) || !Regex.IsMatch(txtMail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
@@ -107,6 +114,7 @@ namespace MYDAY
         {
             if (!validarDatos())
             {
+
                 return;
             }
             Usuario usuario = new Usuario(txtUsuario.Text, txtContrasena.Text, txtMail.Text);

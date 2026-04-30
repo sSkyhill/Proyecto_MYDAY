@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
+using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
 namespace MYDAY
 {
@@ -19,9 +17,9 @@ namespace MYDAY
             InitializeComponent();
             this.Load += Perfil_Load;
         }
+
         private async void Perfil_Load(object sender, EventArgs e)
         {
-
             this.MinimumSize = new Size(500, 400);
             Grids();
             await CargarPublicacionesPerfil();
@@ -34,8 +32,13 @@ namespace MYDAY
             flowPerfil.FlowDirection = FlowDirection.LeftToRight;
             flowPerfil.AutoScroll = true;
         }
+
         private void PintarGrid(List<Publicacion> publicaciones)
         {
+            foreach (Control c in flowPerfil.Controls)
+            {
+                c.Dispose();
+            }
             flowPerfil.Controls.Clear();
 
             int columnas = 4;
@@ -54,34 +57,39 @@ namespace MYDAY
                 flowPerfil.Controls.Add(miniatura);
             }
         }
-        private PictureBox CrearMiniatura(
-            Publicacion p,
-            int tamaño,
-            int margen)
+
+        private PictureBox CrearMiniatura(Publicacion p, int tamaño, int margen)
         {
             PictureBox foto = new PictureBox();
 
             foto.Width = tamaño;
             foto.Height = tamaño;
-
             foto.SizeMode = PictureBoxSizeMode.Zoom;
             foto.Margin = new Padding(margen);
 
             if (!string.IsNullOrEmpty(p.imagenBase64))
             {
-                byte[] bytes =
-                    Convert.FromBase64String(p.imagenBase64);
-
-                using (MemoryStream ms =
-                    new MemoryStream(bytes))
+                try
                 {
-                    Image img = Image.FromStream(ms);
-                    foto.Image = (Image)img.Clone();
+                    byte[] bytes = Convert.FromBase64String(
+                        p.imagenBase64.Trim().Replace(" ", "")
+                    );
+
+                    using (MemoryStream ms = new MemoryStream(bytes))
+                    using (Image temp = Image.FromStream(ms))
+                    {
+                        foto.Image = new Bitmap(temp);
+                    }
+                }
+                catch
+                {
+                    foto.Image = null;
                 }
             }
 
             return foto;
         }
+
         private async Task CargarPublicacionesPerfil()
         {
             try
@@ -89,17 +97,16 @@ namespace MYDAY
                 using HttpClient cliente = new HttpClient();
 
                 string json = await cliente.GetStringAsync(
-                "http://localhost:8080/api-proyecto/rest/publicaciones"
+                    "http://localhost:8080/api-proyecto/rest/publicaciones"
                 );
-                MessageBox.Show(json);
+
                 var opciones = new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 };
 
                 List<Publicacion> posts =
-                    JsonSerializer.Deserialize<List<Publicacion>>
-                    (json, opciones);
+                    JsonSerializer.Deserialize<List<Publicacion>>(json, opciones);
 
                 string usuario = SesionUsuario.NombreUsuario;
 
@@ -108,7 +115,6 @@ namespace MYDAY
                     .ToList();
 
                 PintarGrid(misPosts);
-
             }
             catch (Exception ex)
             {

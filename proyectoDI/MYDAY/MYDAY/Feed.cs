@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
+using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,31 +18,32 @@ namespace MYDAY
 
             panelPublicacion.Width = (int)(panelFlow.ClientSize.Width * 0.95);
             this.MinimumSize = new Size(600, 400);
+
             this.Resize += Feed_Resize;
             this.Load += Feed_Load;
-
         }
+
         private async void Feed_Load(object sender, EventArgs e)
         {
             await CargarFeed();
         }
+
+        private void Feed_Resize(object sender, EventArgs e)
+        {
+            AjustarPaneles();
+        }
+
+       
         private void AjustarPaneles()
         {
             foreach (Control control in panelFlow.Controls)
             {
                 if (control is PanelPost)
                 {
-                    //Si esta maximizado
                     if (this.WindowState == FormWindowState.Maximized)
-                    {
                         control.Width = (int)(panelFlow.ClientSize.Width * 0.70);
-                    }
-                    //Si esta normal
                     else
-                    {
                         control.Width = (int)(panelFlow.ClientSize.Width * 0.95);
-                    }
-
 
                     int margenIzquierdo = (panelFlow.ClientSize.Width - control.Width) / 2;
 
@@ -57,73 +56,57 @@ namespace MYDAY
                 }
             }
         }
-        private void Feed_Resize(object sender, EventArgs e)
-        {
-            AjustarPaneles();
-
-        }
-        private string imagenBase64 = "";
-        private async void lblImagen_Click(object sender, EventArgs e)
-        {
-            FormSubirPubli formSubirPubli = new FormSubirPubli();
-            if (formSubirPubli.ShowDialog() == DialogResult.OK)
-            {
-                await CargarFeed();
-            }
-        }
 
         private async Task CargarFeed()
         {
             try
             {
-                using HttpClient cliente =
-                    new HttpClient();
+                using HttpClient cliente = new HttpClient();
 
-                string json =
-                await cliente.GetStringAsync(
-                "http://localhost:8080/api-proyecto/rest/publicaciones"
+                string json = await cliente.GetStringAsync(
+                    "http://localhost:8080/api-proyecto/rest/publicaciones"
                 );
 
+                var opciones = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
 
-                var opciones =
-                    new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    };
-
-                //Meto en la lista de publicaciones las publicaciones que me devuelve el backend
                 List<Publicacion> posts =
-                 JsonSerializer.Deserialize
-                 <List<Publicacion>>
-                 (
-                    json,
-                    opciones
-                 );
+                    JsonSerializer.Deserialize<List<Publicacion>>(json, opciones);
 
-
+                foreach (Control c in panelFlow.Controls)
+                {
+                    c.Dispose();
+                }
                 panelFlow.Controls.Clear();
 
-                //Coge solo x publicaciones del día de hoy para no sobrecargar
+                // FILTRADO HOY
                 posts = posts
                     .Where(p => DateTime.Parse(p.fechaImagen).Date == DateTime.Today)
                     .OrderByDescending(p => DateTime.Parse(p.fechaImagen))
                     .Take(60)
                     .ToList();
+
                 foreach (var p in posts)
                 {
                     PanelPost nuevoPanel = new PanelPost();
 
-                    //OBSOLETO
-                    //nuevoPanel.Width = (int)(panelFlow.ClientSize.Width * 0.95);
-                    //int margenIzquierdo = (panelFlow.ClientSize.Width - 600) / 2;
-                    //nuevoPanel.Margin = new Padding(Math.Max(margenIzquierdo,10),10,0,10);
-
                     if (!string.IsNullOrEmpty(p.imagenBase64))
                     {
-                        byte[] bytes = Convert.FromBase64String(p.imagenBase64);
+                        byte[] bytes = Convert.FromBase64String(
+                            p.imagenBase64.Trim().Replace(" ", "")
+                        );
 
-                        MemoryStream ms = new MemoryStream(bytes);
-                        Image img = Image.FromStream(ms);
+                        Image img;
+
+                        using (MemoryStream ms = new MemoryStream(bytes))
+                        {
+                            using (Image temp = Image.FromStream(ms))
+                            {
+                                img = new Bitmap(temp);
+                            }
+                        }
 
                         nuevoPanel.CargarImagen(
                             p.nombreUsuario,
@@ -131,38 +114,63 @@ namespace MYDAY
                             p.fechaImagen,
                             img
                         );
-
                     }
                     else
                     {
-
-                        nuevoPanel.CargarImagen(p.nombreUsuario, p.comentario, p.fechaImagen, null);
+                        nuevoPanel.CargarImagen(
+                            p.nombreUsuario,
+                            p.comentario,
+                            p.fechaImagen,
+                            null
+                        );
                     }
 
                     panelFlow.Controls.Add(nuevoPanel);
-                    AjustarPaneles();
                 }
 
+                AjustarPaneles();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                  ex.Message
-                );
+                MessageBox.Show(ex.Message);
             }
         }
 
+       
         private async void picPerfil_Click(object sender, EventArgs e)
         {
-            Perfil perfil = new Perfil();
-            this.Hide();
-            if (perfil.ShowDialog() == DialogResult.OK)
+            try
             {
+                using (Perfil perfil = new Perfil())
+                {
+                    this.Hide();
 
-                await CargarFeed();
-                this.Show();
+                    var result = perfil.ShowDialog();
+
+                    this.Show();
+
+                    if (result == DialogResult.OK)
+                    {
+                        await Task.Delay(100);
+                        await CargarFeed();
+                    }
+                }
             }
-            else { this.Show(); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        
+        private async void lblImagen_Click(object sender, EventArgs e)
+        {
+            FormSubirPubli formSubirPubli = new FormSubirPubli();
+
+            if (formSubirPubli.ShowDialog() == DialogResult.OK)
+            {
+                await CargarFeed();
+            }
         }
     }
 }

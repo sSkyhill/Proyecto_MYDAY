@@ -82,7 +82,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             Name = "FormSubirPubli";
-            Text = "FormSubirPubli";
+            Text = "Subir publicación";
             ((System.ComponentModel.ISupportInitialize)picImagen).EndInit();
             ResumeLayout(false);
             PerformLayout();
